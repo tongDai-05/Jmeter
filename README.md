@@ -65,7 +65,7 @@
    - Biên độ chênh lệch thời gian giữa Min (21.006 ms) và Max (21.115 ms) chỉ khoảng 109 ms.
    - Điều này cho thấy các request không nhận được phản hồi nội dung thực tế từ ứng dụng mà bị treo kết nối cho đến khi chạm ngưỡng **Connection Timeout / Read Timeout** (khoảng 20–21 giây) rồi bị hủy.
 3. **Nguyên nhân chính**:
-   - **Hệ thống phòng thủ bảo vệ (WAF / Anti-DDoS / Rate Limiting)**: Hệ thống tường lửa ứng dụng (WAF) hoặc CDN bảo vệ của VnExpress đã phát hiện lưu lượng truy cập bất thường với tần suất quá cao từ cùng một nguồn IP và tự động kích hoạt cơ chế chặn kết nối (block IP / drop socket connection) để bảo vệ server gốc khỏi nguy cơ quá tải hoặc tấn công từ chối dịch vụ.
+   - **Hệ thống phòng thủ bảo vệ (WAF / Anti-DDoS / Rate Limiting)**: Hệ thống tường lửa ứng dụng (WAF) hoặc CDN bảo vệ của VnExpress đã phát hiện lưu lượng truy cập bất thường với tần suất quá cao từ cùng một nguồn IP và tự động kích hoạt cơ chế chặn kết nối (block IP / drop socket connection) để bảo vệ server gốc khỏi nguy cơ quá tải hoặc tấn công từ chối dịch vụ. Khi hệ thống thấy một IP đơn lẻ gửi hàng chục đến hàng trăm request mỗi giây, nó sẽ tự động nhận diện đây là hành vi tấn công từ chối dịch vụ (DDoS) hoặc spam bot và lập tức đưa IP của bạn vào danh sách đen (Blacklist) để chặn toàn bộ kết nối từ IP đó.
    - **Nghẽn tài nguyên máy Client**: Việc khởi tạo 10.000 kết nối đồng thời từ một máy kiểm thử cá nhân có thể gây cạn kiệt cổng kết nối cục bộ (Ephemeral Port Exhaustion) hoặc nghẽn hàng đợi TCP stack của hệ điều hành.
 
 ---
