@@ -17,9 +17,7 @@
   - **Thời gian chạy tối đa (Duration)**: 60 giây
   - **Số vòng lặp (Loop Count)**: 1
 - **HTTP Request**:
-  - **Giao thức (Protocol)**: HTTPS
-  - **Tên miền (Server Name)**: `vnexpress.net`
-  - **Đường dẫn (Path)**: `/`
+  - **URL**: https://vnexpress.net/
   - **Phương thức (Method)**: GET
   - **Mã hóa (Content Encoding)**: UTF-8
 - **Listeners (Bộ thu thập kết quả)**:
