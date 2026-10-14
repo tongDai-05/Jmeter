@@ -1,4 +1,6 @@
 # JMeter - Báo cáo kiểm tra hiệu năng trang web
+## Họ và tên : Tống Sỹ Đại
+## MSV : 23010037
 
 ## 1. Mục tiêu kiểm thử
 
